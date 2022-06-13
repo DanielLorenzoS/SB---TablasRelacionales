@@ -22,9 +22,11 @@ public class Biblioteca {
 
 	@NotNull
 	private String nombre;
-
+	
+	//Modelo Uno a muchos, este tipo de cascada permite eliminar todos los elementos del hijo al eliminar al padre
+	//MappedBy indica que será el encargado de la columna de la clave externa y obtendrá las entidades y aplicará la cascada
 	@OneToMany(mappedBy = "biblioteca", cascade = CascadeType.ALL)
-	private Set<Libro> libros = new HashSet<>();
+	private Set<Libro> libros = new HashSet<>(); //Hash es un arreglo mejorado que permite agregar rápidamente, pero sin orden
 
 	public int getId() {
 		return id;
@@ -50,7 +52,7 @@ public class Biblioteca {
 		this.libros = libros;
 		
 		for (Libro libro : libros) {
-			libro.setBiblioteca(this);
+			libro.setBiblioteca(this); //Obtención funcional que cada libro
 		}
 	}
 

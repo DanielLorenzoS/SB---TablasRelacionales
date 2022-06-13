@@ -14,8 +14,8 @@ import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
-@Entity
-@Table(name = "libros", uniqueConstraints = {@UniqueConstraint(columnNames = {"nombre"})})
+@Entity // Indica que sólo habrá un libro con el mismo nombre
+@Table(name = "libros", uniqueConstraints = { @UniqueConstraint(columnNames = { "nombre" }) })
 public class Libro {
 
 	@Id
@@ -29,7 +29,7 @@ public class Libro {
 	// biblioteca_id
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "biblioteca_id") // id de la bilbioteca
-	@JsonProperty(access = Access.WRITE_ONLY) // evitar rpoblema con LAZY EXCEPTION
+	@JsonProperty(access = Access.WRITE_ONLY) // evitar problema con LAZY EXCEPTION
 	private Biblioteca biblioteca;
 
 	public int getId() {
@@ -51,7 +51,7 @@ public class Libro {
 	public Biblioteca getBiblioteca() {
 		return biblioteca;
 	}
-
+	//Cuidado aquí que el generador de Setters da otro código
 	public void setBiblioteca(Biblioteca biblioteca) {
 		this.biblioteca = biblioteca;
 	}

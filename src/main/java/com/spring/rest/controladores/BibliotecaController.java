@@ -29,22 +29,26 @@ public class BibliotecaController {
 	@Autowired
 	private BibliotecaRepository bibliotecaRepository;
 	
-	@GetMapping
+	//Response Entity se crea ya automaticamente cuando se genera una clase "clásica", sólo que aquí especificamos sus valores
+	@GetMapping  			//Page Pageable -> Sirve para generar diversas capas en el REST (Json)
 	public ResponseEntity<Page<Biblioteca>> listarBibliotecas(Pageable pageable){
-		return ResponseEntity.ok(bibliotecaRepository.findAll(pageable));
+		return ResponseEntity.ok(bibliotecaRepository.findAll(pageable)); //Extrae las diferentes bibliotecas o clases padre
 	}
 
-	@PostMapping
+	@PostMapping												//@Valid se usa para concretar las validaciones en las entidades
 	public ResponseEntity<Biblioteca> guardarBiblioteca(@Valid @RequestBody Biblioteca biblioteca) {
+		//Guarda en la variable las bibliotecas del repositorio
 		Biblioteca bibliotecaGuardada = bibliotecaRepository.save(biblioteca);
+		//Extrae el o los id de las bibliotecas guardadas
+			//SUCB crea elaces basados en HTTPServletRequest el cual  proporciona un acceso a los datos de cabecera
 		URI ubicacion = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(bibliotecaGuardada.getId()).toUri();
+		//Devuelve un status de creación
 		return ResponseEntity.created(ubicacion).body(bibliotecaGuardada);
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<Biblioteca> actualizarBiblioteca(@PathVariable Integer id,
-			@Valid @RequestBody Biblioteca biblioteca) {
+	public ResponseEntity<Biblioteca> actualizarBiblioteca(@PathVariable Integer id, @Valid @RequestBody Biblioteca biblioteca) {
 		Optional<Biblioteca> bibliotecaOptional = bibliotecaRepository.findById(id);
 
 		if (!bibliotecaOptional.isPresent()) {
