@@ -1,0 +1,67 @@
+body {
+    background-color: #121212;
+    color: white;
+    text-align: center;
+}
+.container {
+    margin: auto;
+    margin-top: 10vh;
+    width: 70%;
+    height: 80vh;
+    display: flex;
+    background-color: #323232;
+    border-radius: 8px;
+}
+.add, .watch {
+    margin: 20px;
+    margin-bottom: 50px;
+    width: 50%;
+    font-size: 22px;
+}
+.watch {
+    overflow-y: auto;
+    scrollbar-base-color: #222;
+}
+.inputAdd {
+    font-size: 15px;
+    margin: 10px;
+    width: 50%;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #525252;
+}
+.select {
+    width: 55%;
+}
+.select:invalid,
+.select option[value=""] {
+    color: #525252;
+}
+.inputAdd::placeholder {
+    color: white;
+}
+.facturasGuardadas {
+    width: 55%;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #525252;
+}
+.btnEnviar {
+    font-size: 18px;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: transparent;
+    border: 1px solid rgb(21, 158, 16);
+    color: white;
+    transition: .5s ease;
+}
+.btnEnviar:hover {
+    background-color: rgb(21, 158, 16);
+}
+.btnEnviar:active {
+    background-color: transparent;
+}

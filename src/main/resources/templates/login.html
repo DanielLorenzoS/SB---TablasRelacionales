@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/Login.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cont-login">
+        <img
+        class="img"
+          src="./images/login.svg"
+          width="40%"
+          height="90%"
+        />
+        <div class="inputs">
+
+            <input
+            class="input"
+            type="text"
+            name="correo"
+            id="txtCorreo"
+            placeholder="Ingresa tu correo..."
+            />
+            <input
+            class="input"
+            type="password"
+            name="contraseña"
+            id="txtContraseña"
+            placeholder="Ingresa tu contraseña..."
+            />
+
+            <a onclick="entrarPerfil()" class="ingresar"
+            ><h3 class="h3">Iniciar sesión</h3></a
+            >
+            <a class="registrar" href="./registrar.html"
+            ><h3 class="h3">Registrarte</h3></a>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/Login.js"></script>
+  </body>
+</html>

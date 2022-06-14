@@ -1,0 +1,11 @@
+com/clientes/test/models/Persona.class
+com/clientes/test/services/Directorio.class
+com/clientes/test/ClientesApplication.class
+com/clientes/test/controllers/FacturaController.class
+com/clientes/test/repositories/PersonaRepository.class
+com/clientes/test/services/Ventas.class
+com/clientes/test/repositories/FacturaRepository.class
+com/clientes/test/ServletInitializer.class
+com/clientes/test/models/Factura.class
+com/clientes/test/controllers/Controller.class
+com/clientes/test/controllers/IndexController.class

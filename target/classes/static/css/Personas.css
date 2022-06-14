@@ -1,0 +1,48 @@
+body {
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    font-size: 32px;
+}
+.content {
+    width: 100%;
+    height: 90vh;
+}
+.table {
+    font-size: 22px;
+    margin: auto;
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+    position: relative;
+}
+.cont-entry, .cont-edit {
+    display: inline-block;
+}
+.entry {
+    display: inline-block;
+    padding: 6px;
+    border-radius: 8px;
+    cursor: default;
+}
+.entry:hover {
+    background-color: #222222;
+}
+.eliminar, .editar {
+    font-size: 24px;
+    cursor: pointer;
+}
+.eliminar::after, .editar::after{
+    content: "";
+    display: block;
+    height: .1vh;
+    width: 0%;
+    transition: .4s ease;
+    background-color: white;
+}
+.eliminar:hover::after, .editar:hover::after{
+    width: 100%;
+}
+.eliminar {
+    margin-left: 100px;
+}

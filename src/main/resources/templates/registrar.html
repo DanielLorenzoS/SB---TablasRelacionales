@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/registrar.css" />
+    <title>Registrar</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cont-login">
+        <img
+          src="./images/login.svg"
+          width="40%"
+          height="90%"
+        />
+
+        <div class="inputs">
+          <div class="cont-inputs">
+            <input
+              class="input"
+              type="text"
+              name="nombre"
+              id="txtNombre"
+              placeholder="Ingresa tu nombre..."
+            />
+            <input
+              class="input"
+              type="text"
+              name="apellidoPaterno"
+              id="txtApellidoPaterno"
+              placeholder="Ingresa tu apellido paterno..."
+            />
+            <input
+              class="input"
+              type="text"
+              name="apellidoMaterno"
+              id="txtApellidoMaterno"
+              placeholder="Ingresa tu apellido materno..."
+            />
+            <input
+            class="input"
+            type="number"
+            name="identificacion"
+            id="txtIdentificacion"
+            placeholder="Ingresa tu identificacion..."
+          />
+            <input
+              class="input"
+              type="text"
+              name="correo"
+              id="txtCorreo"
+              placeholder="Ingresa tu correo..."
+            />
+            <input
+              class="input"
+              type="password"
+              name="contraseña"
+              id="txtContraseña"
+              placeholder="Ingresa tu contraseña..."
+            />
+            <input
+                class="input"
+                type="password"
+                name="Rcontraseña"
+                id="txtRContraseña"
+                placeholder="Ingresa tu contraseña..."
+              />
+            </div>
+            <a onclick="registrarUsuario()" class="registrar"
+              ><h3 class="h3">Registrar</h3></a
+            >
+          <a href="./" class="registrar"
+          ><h3 class="h3Registrar">Iniciar Sesión</h3></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/Registrar.js"></script>
+  </body>
+</html>
